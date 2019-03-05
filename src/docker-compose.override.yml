@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  dutchazuremeetup.webapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  dutchazuremeetup.webapp:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+

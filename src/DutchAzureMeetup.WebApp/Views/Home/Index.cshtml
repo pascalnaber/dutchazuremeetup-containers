@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Meetups";
+}
+
+
+    <h2>Dutch Azure Meetups:</h2>
+    <ul>
+        @foreach (var meetup in this.Model)
+        {
+            <li><div>
+    <h3>@meetup.title</h3>
+    <p>by @meetup.presenter</p>
+    <p>at @meetup.location</p>
+    <p>on @meetup.dateTime</p>
+</div></li>
+        }
+    </ul>
+

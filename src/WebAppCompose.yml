@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  webapi:
+    image: pascalnaber/dutchazuremeetupwebapi:1    
+    restart: always    
+
+  webapp:
+    depends_on:
+      - webapi
+    image: pascalnaber/dutchazuremeetupwebapp:1    
+    restart: always
+    ports:
+       - "8000:80"
+    environment:
+      BackendUri: webapi:5000
+

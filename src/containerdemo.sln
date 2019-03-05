@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F51AF5DD-68D9-431A-884F-E119BA8D2589}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6E7F5C8F-82CB-4CA6-B6AA-D48395AA8BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EADCA29-1316-4848-97CE-23943AA3839B}"
+	ProjectSection(SolutionItems) = preProject
+		WebAppCompose.yml = WebAppCompose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DutchAzureMeetup.WebApi", "DutchAzureMeetup.WebApi\DutchAzureMeetup.WebApi.csproj", "{4F2630E3-F2D8-4787-BAA4-053F014B9CB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DutchAzureMeetup.WebApp", "DutchAzureMeetup.WebApp\DutchAzureMeetup.WebApp.csproj", "{53E75048-19C8-43D2-AAAC-C46A6DE50BEE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E0B90896-692E-4610-B917-9260EEF9440E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F2630E3-F2D8-4787-BAA4-053F014B9CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2630E3-F2D8-4787-BAA4-053F014B9CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2630E3-F2D8-4787-BAA4-053F014B9CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2630E3-F2D8-4787-BAA4-053F014B9CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E75048-19C8-43D2-AAAC-C46A6DE50BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E75048-19C8-43D2-AAAC-C46A6DE50BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E75048-19C8-43D2-AAAC-C46A6DE50BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E75048-19C8-43D2-AAAC-C46A6DE50BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B90896-692E-4610-B917-9260EEF9440E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B90896-692E-4610-B917-9260EEF9440E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B90896-692E-4610-B917-9260EEF9440E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B90896-692E-4610-B917-9260EEF9440E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F2630E3-F2D8-4787-BAA4-053F014B9CB7} = {F51AF5DD-68D9-431A-884F-E119BA8D2589}
+		{53E75048-19C8-43D2-AAAC-C46A6DE50BEE} = {F51AF5DD-68D9-431A-884F-E119BA8D2589}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB046534-2CD2-46CF-80A0-075D7505AA8F}
+	EndGlobalSection
+EndGlobal
