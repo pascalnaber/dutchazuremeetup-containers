@@ -9,10 +9,7 @@ namespace DutchAzureMeetup.WebApp.Proxies
 {
     public interface IMeetup
     {        
-        //[Get("/api/meetup")]
-        //Task<IEnumerable<Meetup>> GetMeetups();
-
         [Get("/api/meetup")]
-        Task<IEnumerable<dynamic>> GetMeetupsDyn();
+        Task<IEnumerable<dynamic>> GetMeetups();
     }
 }

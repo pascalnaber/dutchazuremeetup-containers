@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6E7F5C8F-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EADCA29-1316-4848-97CE-23943AA3839B}"
 	ProjectSection(SolutionItems) = preProject
-		WebAppCompose.yml = WebAppCompose.yml
+		werkt.txt = werkt.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DutchAzureMeetup.WebApi", "DutchAzureMeetup.WebApi\DutchAzureMeetup.WebApi.csproj", "{4F2630E3-F2D8-4787-BAA4-053F014B9CB7}"

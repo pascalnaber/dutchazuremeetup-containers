@@ -23,7 +23,7 @@ namespace DutchAzureMeetup.WebApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var meetups = await meetupProxy.GetMeetupsDyn();
+            var meetups = await meetupProxy.GetMeetups();
 
             return View(meetups);
         }

@@ -26,7 +26,22 @@ namespace DutchAzureMeetup.WebApi
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
+            string connectionString = Configuration.GetConnectionString("DutchAzureMeetupContext");
+            if (!string.IsNullOrEmpty(connectionString))
+            {
+                services.AddDbContext<DutchAzureMeetupContext>(options =>
+                {
+                    options.UseSqlServer(connectionString, sqlOptions =>
+                    {
+                        sqlOptions.EnableRetryOnFailure(
+                        maxRetryCount: 5,
+                        maxRetryDelay: TimeSpan.FromSeconds(30),
+                        errorNumbersToAdd: null);
+                    });
+                });
+            }
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(options =>
@@ -43,7 +58,7 @@ namespace DutchAzureMeetup.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env) 
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, DutchAzureMeetupContext context) 
         {
             if (env.IsDevelopment())
             {
@@ -57,7 +72,9 @@ namespace DutchAzureMeetup.WebApi
                 c.RoutePrefix = string.Empty;
             });
 
-            app.UseMvc();            
+            app.UseMvc();
+
+            DataInitializer.Initialize(context).Wait();
         }
     }
 }

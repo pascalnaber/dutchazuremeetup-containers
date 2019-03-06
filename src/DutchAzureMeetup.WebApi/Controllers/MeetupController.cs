@@ -13,15 +13,21 @@ namespace DutchAzureMeetup.WebApi.Controllers
     [ApiController]
     public class MeetupController : ControllerBase
     {
+        private readonly DutchAzureMeetupContext context;
+
+        public MeetupController(DutchAzureMeetupContext context)
+        {
+            this.context = context;
+        }
+
         [HttpGet]
         public async Task<IEnumerable<Meetup>> Get()
         {
-            return await Task.Run(() =>
-            new List<Meetup>()
-            {
-                new Meetup() { Id=1, DateTime=new DateTime(2019, 3, 7, 18, 0, 0), Location="Xpirit HQ, Hilversum", Title="Running containers on Azure, which, what and when", Presenter="Marco Mansi" },
-                new Meetup() { Id=2, DateTime=new DateTime(2019, 4, 17, 18, 0, 0), Location="Xebia, Amsterdam", Title="Running real world, mission critical systems on Azure", Presenter="Loek Duys" }
-            });            
+            var meetups = from meetup in context.Meetups
+                          orderby meetup.DateTime descending
+                          select meetup;
+
+            return await meetups.ToListAsync();
         }
     }
 }

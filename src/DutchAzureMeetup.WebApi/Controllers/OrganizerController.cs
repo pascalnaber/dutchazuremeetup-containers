@@ -13,16 +13,20 @@ namespace DutchAzureMeetup.WebApi.Controllers
     [ApiController]
     public class OrganizerController : ControllerBase
     {
+        private readonly DutchAzureMeetupContext context;
+
+        public OrganizerController(DutchAzureMeetupContext context)
+        {
+            this.context = context;
+        }
+
         [HttpGet]
         public async Task<IEnumerable<Organizer>> Get()
         {
-            return await Task.Run(() =>
-            new List<Organizer>()
-            {
-                new Organizer() { Id=1, Name="Pascal Naber", Company="Xpirit" },
-                new Organizer() { Id=2, Name="Marco Mansi", Company="SoftAware" },
-                new Organizer() { Id=3, Name="Sander Molenkamp", Company="InfoSupport"}
-            });           
+            var organizers = from organizer in context.Organizers
+                             select organizer;
+
+            return await organizers.ToListAsync();
         }
     }
 }

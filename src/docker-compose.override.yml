@@ -4,12 +4,25 @@ services:
   dutchazuremeetup.webapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
+      - ConnectionStrings__DutchAzureMeetupContext=Server=tcp:dutchazuremeetup.database.windows.net,1433;Initial Catalog=dutchazuremeetup;Persist Security Info=False;User ID=dutchazuremeetup;Password=We<3@zure;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+    expose:
       - "80"
+    ports:
+      - "5000:80"
+    networks:
+      - isolated
 
   dutchazuremeetup.webapp:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    ports:
+      - BackendUri=http://dutchazuremeetup.webapi
+    expose:
       - "80"
+    ports:
+      - "80:80"
+    networks:
+      - isolated
 
+networks:
+  isolated:
+    driver: bridge
